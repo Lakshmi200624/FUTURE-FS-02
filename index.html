@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini E-Commerce Store | Task 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Future Shop</h1>
+        <div class="cart-status">Cart: <span id="cart-count">0</span> items</div>
+    </header>
+
+    <main>
+        <section class="filters">
+            <input type="text" id="search" placeholder="Search products...">
+        </section>
+
+        <section class="product-grid" id="products">
+            <div class="product-card">
+                <div class="product-image"></div>
+                <h3>Wireless Headphones</h3>
+                <p>$99.00</p>
+                <button onclick="updateCart(1)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-image"></div>
+                <h3>Smart Watch</h3>
+                <p>$149.00</p>
+                <button onclick="updateCart(1)">Add to Cart</button>
+            </div>
+        </section>
+
+        <section id="checkout">
+            <h2>Checkout Simulation</h2>
+            <form id="checkout-form">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="text" placeholder="Card Number (Simulation)" required>
+                <button type="submit">Complete Purchase</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        let count = 0;
+        function updateCart(val) {
+            count += val;
+            document.getElementById('cart-count').innerText = count;
+            alert('Item added to cart!');
+        }
+    </script>
+</body>
+</html>
